@@ -2,7 +2,7 @@ body {
   color: white;
   font-family: 'Noto Sans JP', sans-serif;
   animation: bgcolor 5s linear 0s infinite normal;
-  font-align: center;
+  text-align: center;
 }
 @keyframes bgcolor {
   0%{
