@@ -15,7 +15,7 @@
       var Yq = 0;
       var rDeg = 0;
       var cpdS = window.getComputedStyle(cE, null);
-      const matrix = cpdS.transform || cpdS.webkitTransform || cpdS.mozTransform
+      const matrix = cpdS['transform'] || cpdS.webkitTransform || cpdS.mozTransform
       const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
       
       setInterval(cMaRf, 5);
