@@ -4,7 +4,30 @@
     <title>cursor</title>
   </head>
   <body>
-    <img src="vector_cursor_t.svg" class="cursor">
-    <h1>Coming soon...</h1>
+    <img src="vector_cursor_t.svg" id="cursor">
+    <script>
+      'use strict'
+      var cE = document.getElementById("cursor");
+      var cEstyle = cE.style;
+      var srX = 0;
+      var srY = 0;
+      var Xq = 0;
+      var Yq = 0;
+      var cpdS = window.getComputedStyle(cE, null);
+      const matrix = cpdS.transform || cpdS.webkitTransform || cpdS.mozTransform
+      
+      setInterval(cMaRf, 5);
+      
+      function cMaRf() {
+        srX = matrixValues[4] - Xq;
+        srY = matrixValues[5] - Yq;
+        Xq = matrixValues[4];
+        Yq = matrixValues[5];
+        cEstyle.transform = "translate(" + event.screenX + "px, " + event.screenY + "px)";
+        cEstyle.transform = "rotate(" + ( srX + srY ) + "deg)";
+        srX = 0 - srX / 8;
+        srY = 0 - srY / 4;
+      }
+    </script>
   </body>
 </html>
