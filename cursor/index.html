@@ -13,6 +13,7 @@
       var srY = 0;
       var Xq = 0;
       var Yq = 0;
+      var rDeg = 0;
       var cpdS = window.getComputedStyle(cE, null);
       const matrix = cpdS.transform || cpdS.webkitTransform || cpdS.mozTransform
       const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
@@ -25,7 +26,8 @@
         Xq = matrixValues[4];
         Yq = matrixValues[5];
         cEstyle.transform = "translate(" + event.screenX + "px, " + event.screenY + "px)";
-        cEstyle.transform = "rotate(" + ( srX + srY ) + "deg)";
+        rDeg = srX + srY;
+        cEstyle.transform = "rotate(" + rDeg + "deg)";
         srX = 0 - srX / 8;
         srY = 0 - srY / 4;
       }
