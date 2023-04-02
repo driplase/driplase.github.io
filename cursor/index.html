@@ -14,18 +14,19 @@
       var Xq = 0;
       var Yq = 0;
       var rDeg = 0;
-      var cpdS = window.getComputedStyle(cE, null);
-      const matrix = cpdS['transform'] || cpdS.webkitTransform || cpdS.mozTransform
-      const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
+      var Xt = 0;
+      var Yt = 0;
       
       setInterval(cMaRf, 5);
       
       function cMaRf() {
-        srX = matrixValues[4] - Xq;
-        srY = matrixValues[5] - Yq;
-        Xq = matrixValues[4];
-        Yq = matrixValues[5];
-        cEstyle.transform = "translate(" + event.screenX + "px, " + event.screenY + "px)";
+        srX = Xt - Xq;
+        srY = Yt - Yq;
+        Xq = Xt;
+        Yq = Yt;
+        Xt = event.screenX;
+        Yt = event.screenY;
+        cEstyle.transform = "translate(" + Xt + "px, " + Yt + "px)";
         rDeg = srX + srY;
         cEstyle.transform = "rotate(" + rDeg + "deg)";
         srX = 0 - srX / 8;
