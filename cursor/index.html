@@ -30,16 +30,16 @@
       setInterval(cMaRf, 5);
       
       function cMaRf() {
-        srX = ( Xt - Xq ) * 16;
-        srY = ( Yt - Yq ) * 8;
+        srX = ( Xt - Xq ) * 32;
+        srY = ( Yt - Yq ) * 16;
         Xq = Xt;
         Yq = Yt;
         Xt = curXpos;
         Yt = curYpos;
         rDeg = srX + srY;
         cEstyle.transform = "translate(" + Xt + "px, " + Yt + "px) rotate(" + rDeg + "deg)";
-        srX += srX / -128;
-        srY += srY / -64;
+        srX += srX / -256;
+        srY += srY / -128;
       }
     </script>
   </body>
