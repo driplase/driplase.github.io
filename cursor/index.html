@@ -16,13 +16,13 @@
       var rDeg = 0;
       var Xt = 0;
       var Yt = 0;
-      curXpos = 0;
-      curYpos = 0;
+      var curXpos = 0;
+      var curYpos = 0;
       
       window.addEventListener("load", function () {
         
         window.onmousemove = function (event) {
-          curXpor = event.clientX;
+          curXpos = event.clientX;
           curYpos = event.clientY;
         };
       });
