@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html style="cursor: none;">
   <head>
     <title>cursor</title>
   </head>
-  <body style="cursor: none;">
+  <body>
     <img src="vector_cursor.svg" id="cursor">
     <script>
       'use strict'
@@ -38,8 +38,8 @@
         Yt = curYpos;
         rDeg = srX + srY;
         cEstyle.transform = "translate(" + Xt + "px, " + Yt + "px) rotate(" + rDeg + "deg)";
-        srX += srX / -32;
-        srY += srY / -16;
+        srX += srX / -16;
+        srY += srY / -8;
       }
     </script>
   </body>
