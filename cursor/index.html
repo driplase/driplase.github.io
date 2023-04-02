@@ -30,8 +30,8 @@
       setInterval(cMaRf, 5);
       
       function cMaRf() {
-        srX = Xt - Xq;
-        srY = Yt - Yq;
+        srX = ( Xt - Xq ) * 3;
+        srY = ( Yt - Yq ) * 3;
         Xq = Xt;
         Yq = Yt;
         Xt = curXpos;
