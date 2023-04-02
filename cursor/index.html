@@ -38,8 +38,8 @@
         Yt = curYpos;
         rDeg = srX + srY;
         cEstyle.transform = "translate(" + Xt + "px, " + Yt + "px) rotate(" + rDeg + "deg)";
-        srX = 0 - srX / 32;
-        srY = 0 - srY / 16;
+        srX -= srX / 8;
+        srY -= srY / 4;
       }
     </script>
   </body>
