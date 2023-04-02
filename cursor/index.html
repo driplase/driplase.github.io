@@ -16,6 +16,16 @@
       var rDeg = 0;
       var Xt = 0;
       var Yt = 0;
+      var curXpos = 0;
+      var curYpos = 0;
+      
+      window.addEventListener("load", function () {
+        
+        window.onmousemove = function (event) {
+          curXpor = event.clientX;
+          curYpos = event.clientY;
+        };
+      });
       
       setInterval(cMaRf, 5);
       
@@ -24,8 +34,8 @@
         srY = Yt - Yq;
         Xq = Xt;
         Yq = Yt;
-        Xt = event.screenX;
-        Yt = event.screenY;
+        Xt = curXpos;
+        Yt = curYpos;
         cEstyle.transform = "translate(" + Xt + "px, " + Yt + "px)";
         rDeg = srX + srY;
         cEstyle.transform = "rotate(" + rDeg + "deg)";
