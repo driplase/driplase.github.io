@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>bouncyDiv</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            div#b {
+                background-color: #0072de;
+                box-shadow: 0 0 8px #1f84e2c0;
+                width: 30px;
+                height: 30px;
+                position: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="b"></div>
+        <script>
+            const b = document.getElementById('b'), bw = 30, bh = 30;
+            let vw = window.innerWidth, vh = window.innerHeight, dir = Math.round(Math.random() * 3) * 90 + 45, sx = 0, sy = 0, x = vw / 2, y = vh / 2;
+            const speed = 5, pi2 = Math.PI*2;
+            window.addEventListener('resize', e => vw = window.innerWidth, vh = window.innerHeight)
+            setInterval(() => {
+                sx = Math.sin(pi2*(dir/360)) * speed
+                sy = Math.cos(pi2*(dir/360)) * speed
+                x += sx, y += sy
+                x = Math.min(x, vw), y = Math.min(y, vh)
+                if (x > vw - bw / 2 || x < bw / 2) {
+                    dir *= -1
+                }
+                if (y > vh - bh / 2 || y < bh / 2) {
+                    dir = 180-dir
+                }
+                dir = (dir + 180) % 360 - 180
+                b.style.left = `${x - bw / 2}px`, b.style.top = `${y - bh / 2}px`
+            }, 16)
+        </script>
+    </body>
+</html>
