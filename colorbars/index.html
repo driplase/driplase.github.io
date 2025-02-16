@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                flex-direction: column;
+            }
+            .top {
+                display: flex;
+                height: calc(200vh/3);
+                flex-direction: row;
+            }
+            .center {
+                display: flex;
+                height: calc(50vh/6);
+                flex-direction: row;
+            }
+            .bottom {
+                display: flex;
+                height: 25vh;
+                flex-direction: row;
+            }
+            .c3 {
+                width: calc(100%/3);
+                height: 100%;
+                display: inline-block;
+            }
+            .c4 {
+                width: calc(125vw/7);
+                display: inline-block;
+            }
+            .c7 {
+                width: calc(100vw/7);
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="top">
+                <div class="c7" style="
+                    background: rgb(75%, 75%, 75%);
+                    "></div>
+                <div class="c7" style="
+                    background: rgb(75%, 75%,  0%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb( 0%, 75%, 75%);
+                    "></div>
+                <div class="c7" style="
+                    background: rgb( 0%, 75%,  0%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb(75%,  0%, 75%);
+                    "></div>
+                <div class="c7" style="
+                    background: rgb(75%,  0%,  0%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb( 0%,  0%, 75%);
+                    "></div>
+            </div>
+            <div class="center">
+                <div class="c7" style="
+                    background: rgb( 0%,  0%, 75%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb( 0%,  0%,  0%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb(75%,  0%, 75%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb( 0%,  0%,  0%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb( 0%, 75%, 75%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb( 0%,  0%,  0%);
+                "></div>
+                <div class="c7" style="
+                    background: rgb(75%, 75%, 75%);
+                "></div>
+            </div>
+            <div class="bottom">
+                <div class="c4" style="
+                    background: rgb(  0,  16,  62);
+                "></div>
+                <div class="c4" style="
+                    background: rgb(255, 255, 255);
+                "></div>
+                <div class="c4" style="
+                    background: rgb( 36,   0,  96);
+                "></div>
+                <div class="c4" style="
+                    background: rgb(  0,   0,   0);
+                "></div>
+                <div class="c7" style="
+                    display: flex;
+                ">
+                    <div class="c3" style="
+                        background: hsl(  0,  0%, -4%);
+                    "></div>
+                    <div class="c3" style="
+                        background: hsl(  0,  0%,  0%);
+                    "></div>
+                    <div class="c3" style="
+                        background: hsl(  0,  0%,  4%);
+                    "></div>
+                </div>
+                <div class="c7" style="
+                    background: rgb(  0,   0,   0);
+                "></div>
+            </div>
+        </div>
+        <script>
+            function isFullScreen() {
+                if ((document.fullscreenElement !== undefined && document.fullscreenElement !== null) ||
+                    (document.mozFullScreenElement !== undefined && document.mozFullScreenElement !== null) ||
+                    (document.webkitFullscreenElement !== undefined && document.webkitFullscreenElement !== null) ||
+                    (document.webkitCurrentFullScreenElement !== undefined && document.webkitCurrentFullScreenElement !== null) ||
+                    (document.msFullscreenElement !== undefined && document.msFullscreenElement !== null)){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            document.onfullscreenchange = e => {
+                document.body.style.cursor = isFullScreen() ?
+                    "none" : "auto"
+            }
+            document.onkeydown = e => {
+                if (e.code === "F11") {
+                    e.preventDefault();
+                    if (isFullScreen()) {
+                        document.exitFullscreen()
+                    } else {
+                        document.documentElement.requestFullscreen()
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
